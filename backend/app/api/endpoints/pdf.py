@@ -4,7 +4,7 @@ from app.models.schema import PDFUploadResponse
 
 router = APIRouter()
 
-@router.post("/upload", response_model=PDFUploadResponse)
+@router.post("/upload/", response_model=PDFUploadResponse)
 async def upload_pdf(file: UploadFile = File(...)):
     if not file.filename.endswith(".pdf"):
         raise HTTPException(status_code=400, detail="Only PDF files are allowed")
