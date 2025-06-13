@@ -1,0 +1,42 @@
+.vscode
+
+# --- Backend Python ignores ---
+backend/app/__pycache__/
+backend/**/*.py[cod]
+backend/*.egg-info/
+
+**/__pycache__
+
+# Backend environment and virtual environments
+backend/.env
+backend/venv/
+backend/.venv/
+backend/env/
+backend/data/
+backend/vectorstores
+
+**/.env
+
+# Logs
+backend/*.log
+
+# --- Frontend Node.js ignores ---
+frontend/node_modules/
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+
+# Frontend build output
+frontend/build/
+frontend/dist/
+
+# --- Dataset and indexes (user-generated content) ---
+dataset/
+Indexes/
+
+# --- OS and editor-specific ignores ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp

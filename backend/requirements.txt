@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+PyPDF2
+python-dotenv
+langchain
+langchain-community
+faiss-cpu
+pydantic
