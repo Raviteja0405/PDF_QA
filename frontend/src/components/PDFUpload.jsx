@@ -1,16 +1,24 @@
 import { useState } from "react";
 import { IoIosAddCircleOutline } from "react-icons/io";
 import { CiFileOn } from "react-icons/ci";
+import toast from "react-hot-toast";
 
-const PDFUpload = ({ setDocumentId}) => {
+const PDFUpload = ({ setDocumentId }) => {
   const [fileName, setFileName] = useState("");
 
   const handleUpload = async (e) => {
     const file = e.target.files[0];
     if (!file) return;
 
+    if (file.type !== "application/pdf") {
+      toast.error("Only PDF files are allowed");
+      return;
+    }
+
     const formData = new FormData();
     formData.append("file", file);
+
+    const uploadToast = toast.loading("Uploading PDF...");
 
     try {
       const response = await fetch("http://localhost:8000/api/pdf/upload/", {
@@ -19,12 +27,15 @@ const PDFUpload = ({ setDocumentId}) => {
       });
 
       if (!response.ok) throw new Error("Upload failed");
+
       const data = await response.json();
-      setFileName(data.filename); 
+      setFileName(data.filename);
       setDocumentId(data.document_id);
+
+      toast.success("PDF uploaded successfully!", { id: uploadToast });
     } catch (err) {
       console.error("Upload error:", err);
-      alert("Upload failed");
+      toast.error("PDF upload failed!", { id: uploadToast });
     }
   };
 
