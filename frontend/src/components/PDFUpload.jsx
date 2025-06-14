@@ -2,7 +2,7 @@ import { useState } from "react";
 import { IoIosAddCircleOutline } from "react-icons/io";
 import { CiFileOn } from "react-icons/ci";
 
-const PDFUpload = () => {
+const PDFUpload = ({ setDocumentId}) => {
   const [fileName, setFileName] = useState("");
 
   const handleUpload = async (e) => {
@@ -21,6 +21,7 @@ const PDFUpload = () => {
       if (!response.ok) throw new Error("Upload failed");
       const data = await response.json();
       setFileName(data.filename); 
+      setDocumentId(data.document_id);
     } catch (err) {
       console.error("Upload error:", err);
       alert("Upload failed");

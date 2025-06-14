@@ -17,7 +17,7 @@ llm = ChatPerplexity(model="sonar", temperature=0.5)
 
 # Prompt template
 prompt = PromptTemplate.from_template(
-    """You are a helpful assistant. Use only the information in the provided context to answer the user's question.
+    """You are a PDF QA assistant.User will ask you a question about a PDF document.You are given with the extracted text from a PDF document. Use only the information in the provided context to answer the user's question.
 If the context does not contain the answer, respond with:
 "I'm sorry, but I couldn't find relevant information in the document to answer that question."
 

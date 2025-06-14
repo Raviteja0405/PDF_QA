@@ -1,3 +1,5 @@
+import ReactMarkdown from 'react-markdown';
+
 const ChatMessage = ({ role, content }) => {
   const profileImage = role === 'user' ? '/profile-user.png' : '/profile-ai.png';
 
@@ -9,7 +11,7 @@ const ChatMessage = ({ role, content }) => {
         className="w-8 h-8 rounded-full mr-3"
       />
       <div className="px-5 py-3 rounded-xl shadow-sm bg-white text-black">
-        {content}
+        <ReactMarkdown>{content}</ReactMarkdown>
       </div>
     </div>
   );

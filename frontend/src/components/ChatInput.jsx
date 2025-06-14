@@ -16,7 +16,7 @@ const ChatInput = ({ onSend }) => {
       onSubmit={handleSubmit}
       className="p-4 bg-white shadow-inner"
     >
-      <div className="flex items-center w-full max-w-6xl mx-auto my-8 bg-[#F9FAFB] border border-[#E4E8EE] rounded-lg px-4 py-3 shadow-sm">
+      <div className="flex items-center w-full max-w-7xl mx-auto my-8 bg-[#F9FAFB] border border-[#E4E8EE] rounded-lg px-4 py-3 shadow-sm">
         <input
           type="text"
           placeholder="Send a message..."
