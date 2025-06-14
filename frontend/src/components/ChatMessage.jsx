@@ -1,8 +1,14 @@
 const ChatMessage = ({ role, content }) => {
-  const isUser = role === 'user';
+  const profileImage = role === 'user' ? '/profile-user.png' : '/profile-ai.png';
+
   return (
-    <div className={`flex ${isUser ? 'justify-end' : 'justify-start'}`}>
-      <div className={`max-w-lg px-4 py-3 rounded-lg ${isUser ? 'bg-blue-500 text-white' : 'bg-gray-200 text-black'}`}>
+    <div className="flex items-center justify-start ">
+      <img
+        src={profileImage}
+        alt="Profile"
+        className="w-8 h-8 rounded-full mr-3"
+      />
+      <div className="px-5 py-3 rounded-xl shadow-sm bg-white text-black">
         {content}
       </div>
     </div>

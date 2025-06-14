@@ -12,7 +12,6 @@ const ChatPage = () => {
     const newMessages = [...messages, { role: 'user', content: message }];
     setMessages(newMessages);
 
-    // Make API call here using fetch/axios from utils/api.js
     const res = await fetch("http://localhost:8000/api/chat", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -23,14 +22,18 @@ const ChatPage = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-100">
+    <div className="min-h-screen flex flex-col bg-white">
       <Navbar />
-      <div className="flex-1 overflow-y-auto px-6 py-4 space-y-4">
-        {messages.map((msg, index) => (
-          <ChatMessage key={index} role={msg.role} content={msg.content} />
-        ))}
+      <div className="flex-1 overflow-y-auto py-6">
+        <div className="max-w-6xl mx-auto px-8 space-y-6">
+          {messages.map((msg, index) => (
+            <ChatMessage key={index} role={msg.role} content={msg.content} />
+          ))}
+        </div>
       </div>
-      <ChatInput onSend={handleSend} />
+      <div className="max-w-6xl mx-auto w-full px-4">
+        <ChatInput onSend={handleSend} />
+      </div>
     </div>
   );
 };
