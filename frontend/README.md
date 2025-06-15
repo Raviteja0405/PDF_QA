@@ -78,4 +78,4 @@ If not, update the API URLs in `ChatPage.jsx` and `PDFUpload.jsx`.
 
 ## 🤝 Author
 
-Built with ❤️ by [Your Name]
+Built with ❤️ by D. Ravi Teja.
