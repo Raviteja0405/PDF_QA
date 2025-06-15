@@ -65,9 +65,9 @@ const PDFUpload = ({ setDocumentId }) => {
       {/* Mobile view */}
       <div className="sm:hidden flex items-center space-x-2">
         {fileName && (
-          <div className="flex items-center text-green-700 text-sm">
+          <div className="flex items-center text-green-700 text-md ml-4">
             <CiFileOn className="mr-1" />
-            <span className="truncate max-w-[100px]">{fileName}</span>
+            <span className="truncate max-w-[70px] sm:max-w-[100px]">{fileName}</span>
           </div>
         )}
         <label className="border-2 border-black p-2 rounded-md cursor-pointer hover:shadow transition">
@@ -77,7 +77,7 @@ const PDFUpload = ({ setDocumentId }) => {
             className="hidden"
             onChange={handleUpload}
           />
-          <IoIosAddCircleOutline size={20} />
+          <IoIosAddCircleOutline className="w-5 h-5" />
         </label>
       </div>
     </div>
