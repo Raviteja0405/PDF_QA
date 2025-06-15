@@ -1,12 +1,81 @@
-# React + Vite
+# 🖥️ Frontend – PDF Chatbot (React + Tailwind)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the frontend of the PDF Chatbot application, built using **React**, **Tailwind CSS**, and **react-hot-toast**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- 📄 Upload PDF and show filename  
+- 💬 Ask questions based on uploaded PDF  
+- 🔐 Disable input until PDF is uploaded  
+- 🔄 Show loading state while waiting for response  
+- 🔔 Toast notifications for errors and feedback  
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🧪 Setup Instructions
+
+### 1. Install Dependencies
+
+```bash
+npm install
+```
+
+### 2. Run Dev Server
+
+```bash
+npm run dev
+```
+
+### 3. Project Structure
+
+```
+src/
+├── components/
+│   ├── ChatInput.jsx
+│   ├── ChatMessage.jsx
+│   ├── Navbar.jsx
+│   └── PDFUpload.jsx
+├── pages/
+│   └── ChatPage.jsx
+├── App.jsx
+└── main.jsx
+```
+
+---
+
+## ⚙️ Configuration
+
+Make sure your backend is running at:
+
+```
+http://localhost:8000
+```
+
+If not, update the API URLs in `ChatPage.jsx` and `PDFUpload.jsx`.
+
+---
+
+## 🧑‍💻 Tech Stack
+
+- React  
+- Tailwind CSS  
+- react-hot-toast  
+- Vite  
+
+---
+
+## 📁 Notes
+
+- The `document_id` is passed from `Navbar` → `ChatPage` → `ChatInput`
+- Toasts notify the user when:
+  - No PDF is uploaded  
+  - Assistant is still responding  
+  - A fetch error occurs  
+
+---
+
+## 🤝 Author
+
+Built with ❤️ by [Your Name]
